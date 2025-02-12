@@ -216,7 +216,6 @@ body {
   z-index: -1;
 }
 
-
 .marque-move {
   display: flex;
   padding: 2vh 0;
@@ -295,7 +294,7 @@ body {
   justify-content: start;
   gap: 5vh;
   padding: 0 6vw;
-  height: auto  ;
+  height: auto;
   width: 100%;
 }
 
@@ -405,7 +404,7 @@ body {
   color: #ffffffa2;
 }
 
-.pro-btn{
+.pro-btn {
   margin-top: 5vh;
   width: 100%;
   display: flex;
@@ -420,7 +419,7 @@ body {
   justify-content: start;
   gap: 5vh;
   padding: 20vh 6vw;
-  height: auto  ;
+  height: auto;
   width: 100%;
   margin-top: 7.5vh;
 }
@@ -460,7 +459,7 @@ body {
   margin-left: 1vw;
 }
 
-.special-main{
+.special-main {
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -469,11 +468,11 @@ body {
   height: 100%;
 }
 
-.special-acc{
+.special-acc {
   width: 50%;
 }
 
-.special-text{
+.special-text {
   height: 33vh;
   width: 50%;
   display: flex;
@@ -488,7 +487,7 @@ body {
 }
 
 .accordion-item {
-  border: 1px dashed #cccccc62; ;
+  border: 1px dashed #cccccc62;
   margin-bottom: 10px;
   border-radius: 8px;
   overflow: hidden;
@@ -526,14 +525,12 @@ body {
   background: #111116;
   font-size: 16px;
   overflow: hidden;
-  padding: 0 1vw ;
+  padding: 0 1vw;
   color: var(--text-secondary);
   font-family: var(--font-alpino-n);
 }
 
 /* ......Accordian........ */
-
-
 
 /* Responsive Design */
 
@@ -758,7 +755,7 @@ body {
     height: 100vh;
   }
 
-  .card-img img{
+  .card-img img {
     height: 80%;
     width: 85%;
   }
@@ -777,22 +774,22 @@ body {
     font-size: 3.4vw;
   }
 
-  .special-main{
+  .special-main {
     flex-direction: column-reverse;
   }
 
-  .speciality{
+  .speciality {
     padding: 6vw;
   }
 
-  .special-head{
+  .special-head {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .special-acc{
+  .special-acc {
     width: 100%;
     padding: 7vh 0;
     gap: 10vh;
@@ -823,23 +820,12 @@ body {
     width: 6.5vw;
   }
 
-  .special-text{
+  .special-text {
     margin-top: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
-  .tilted-card-img {
-    position: absolute;
-    top: 0;
-    left: 104px;
-    object-fit: cover;
-    border-radius: 15px;
-    will-change: transform;
-    transform: translateZ(0);
-    border: 2px groove #cccccc62;
-}
 }
 
 /* Scrollbar */
