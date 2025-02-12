@@ -167,7 +167,9 @@ body > *:not(.nav-header) {
 /* Responsive design */
 
 @media (max-width: 768px) {
-
+  nav#navbar.nav-nav{
+    padding: 0 2vw;
+  }
 
   .nav-logo a {
     font-size: 5vw;

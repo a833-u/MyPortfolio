@@ -477,7 +477,7 @@ const Home = () => {
         </div>
       </div>
       <div className="speciality">
-        <div className="special-head" ref={specialRef}>
+        <di v className="special-head" ref={specialRef}>
           <h1 className="head1">
             <img src={special} alt="" />
             <ShinyText
@@ -492,7 +492,7 @@ const Home = () => {
               Technical <span> Proficiencies</span>
             </h1>
           </div>
-        </div>
+        </di>
         <div className="special-main">
           <div className="special-acc">
             <div className="accordion">

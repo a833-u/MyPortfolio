@@ -65,3 +65,20 @@
   opacity: 0;
   z-index: 3;
 }
+
+
+@media (max-width: 767px) {
+  .tilted-card-img {
+    position: absolute;
+    top: 0;
+    left: 21.7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    border-radius: 15px;
+    will-change: transform;
+    transform: translateZ(0);
+    border: 2px groove #cccccc62;
+}
+}
