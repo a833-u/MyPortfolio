@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-dark-bg);
+  }
+  
+  @font-face {
+    font-family: Alpino-N;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../Fonts/Alpino/Alpino-Medium.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: Alpino-L;
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("../Fonts/Alpino/Alpino-Light.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: Alpino-B;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../Fonts/Alpino/Alpino-Bold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: Clash-N;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../Fonts/Clash/ClashDisplay-Regular.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: Clash-L;
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("../Fonts/Clash/ClashDisplay-Light.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: Clash-B;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../Fonts/Clash/ClashDisplay-Bold.woff2") format("woff2");
+  }
+  
+  
+  
+  h1{
+      font-family: var(--font-clash-l);
+      color: var(--text-primary);
+  }
