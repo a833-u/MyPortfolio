@@ -463,9 +463,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: start;
+  flex-direction: column;
   gap: 2vw;
   width: 100%;
   height: 100%;
+}
+
+.special-1{
+  display: flex;
 }
 
 .special-acc {
@@ -529,6 +534,16 @@ body {
   color: var(--text-secondary);
   font-family: var(--font-alpino-n);
 }
+
+.special-wall{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 
 /* ......Accordian........ */
 
@@ -775,7 +790,7 @@ body {
   }
 
   .special-main {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .speciality {
@@ -787,6 +802,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .special-1{
+    display: flex;
+    flex-direction: column;
   }
 
   .special-acc {
@@ -821,10 +841,11 @@ body {
   }
 
   .special-text {
-    margin-top: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
+  }
+
+  .special-wall{
+    height: 35vh;
   }
 }
 

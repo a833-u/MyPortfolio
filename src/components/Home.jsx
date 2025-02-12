@@ -13,6 +13,7 @@ import accLogo from "../assets/ACC_logo.svg";
 import educonnect from "../assets/EduConnect.jpg";
 import special from "../assets/special.svg";
 import accArrow from "../assets/acc-arrow.svg";
+import LogoWall from "../LogoWall/LogoWall";
 import CC from "../assets/CC.jpg";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
@@ -22,6 +23,15 @@ import { BiCodeCurly } from "react-icons/bi";
 import { GoGitPullRequest } from "react-icons/go";
 import { FaFigma } from "react-icons/fa";
 import TiltedCard from "../TiltedCard/TiltedCard";
+import JS from "../assets/PNG/js.png";
+import express from "../assets/PNG/pngegg.png";
+import github from "../assets/PNG/github.png";
+import gsapLogo from "../assets/PNG/gsap.png";
+import html from "../assets/PNG/html.png";
+import mongo from "../assets/PNG/MongoDB.png";
+import node from "../assets/PNG/node.png";
+import reactLogo from "../assets/PNG/physics.png";
+import tailwind from "../assets/PNG/tailwind1.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -265,6 +275,18 @@ const Home = () => {
     },
   ];
 
+  const logoImgs = [
+    { imgUrl: JS, altText: "JavaScript Logo" },
+    { imgUrl: express, altText: "React Bits Logo" },
+    { imgUrl: github, altText: "React Bits Logo" },
+    { imgUrl: gsapLogo, altText: "React Bits Logo" },
+    { imgUrl: reactLogo, altText: "React Bits Logo" },
+    { imgUrl: tailwind, altText: "React Bits Logo" },
+    { imgUrl: html, altText: "React Bits Logo" },
+    { imgUrl: mongo, altText: "React Bits Logo" },
+    { imgUrl: node, altText: "React Bits Logo" }
+  ];
+
   return (
     <div>
       <div className="home-main">
@@ -477,7 +499,7 @@ const Home = () => {
         </div>
       </div>
       <div className="speciality">
-        <di v className="special-head" ref={specialRef}>
+        <div className="special-head" ref={specialRef}>
           <h1 className="head1">
             <img src={special} alt="" />
             <ShinyText
@@ -492,50 +514,63 @@ const Home = () => {
               Technical <span> Proficiencies</span>
             </h1>
           </div>
-        </di>
+        </div>
         <div className="special-main">
-          <div className="special-acc">
-            <div className="accordion">
-              {items.map((item, index) => (
-                <div key={index} className="accordion-item">
-                  <div
-                    className="accordion-header"
-                    onClick={() => toggleAccordion(index)}
-                  >
-                    <h3>
-                      {item.image}
-                      {item.title}
-                    </h3>
-                    <img
-                      src={accArrow}
-                      alt=""
-                      ref={(el) => (arrowRefs.current[index] = el)}
-                      className="arrow-icon"
-                    />
+          <div className="special-1">
+            <div className="special-acc">
+              <div className="accordion">
+                {items.map((item, index) => (
+                  <div key={index} className="accordion-item">
+                    <div
+                      className="accordion-header"
+                      onClick={() => toggleAccordion(index)}
+                    >
+                      <h3>
+                        {item.image}
+                        {item.title}
+                      </h3>
+                      <img
+                        src={accArrow}
+                        alt=""
+                        ref={(el) => (arrowRefs.current[index] = el)}
+                        className="arrow-icon"
+                      />
+                    </div>
+                    <div
+                      ref={(el) => (contentRefs.current[index] = el)}
+                      className="accordion-content"
+                    >
+                      <p>{item.content}</p>
+                    </div>
                   </div>
-                  <div
-                    ref={(el) => (contentRefs.current[index] = el)}
-                    className="accordion-content"
-                  >
-                    <p>{item.content}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            <div className="special-text">
+              <TiltedCard
+                imageSrc={accLogo}
+                altText="Kendrick Lamar - GNX Album Cover"
+                containerHeight="300px"
+                containerWidth="300px"
+                imageHeight="300px"
+                imageWidth="300px"
+                rotateAmplitude={12}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={false}
+                displayOverlayContent={false}
+              />
             </div>
           </div>
-          <div className="special-text">
-            <TiltedCard
-              imageSrc={accLogo}
-              altText="Kendrick Lamar - GNX Album Cover"
-              containerHeight="300px"
-              containerWidth="300px"
-              imageHeight="300px"
-              imageWidth="300px"
-              rotateAmplitude={12}
-              scaleOnHover={1.2}
-              showMobileWarning={false}
-              showTooltip={false}
-              displayOverlayContent={false}
+          <div className="special-wall">
+            <LogoWall
+              items={logoImgs}
+              direction="horizontal"
+              pauseOnHover={true}
+              size="clamp(8rem, 1rem + 20vmin, 25rem)"
+              duration="60s"
+              bgColor="#0b0b0d"
+              bgAccentColor="#222222"
             />
           </div>
         </div>
