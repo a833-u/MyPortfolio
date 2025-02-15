@@ -47,12 +47,12 @@ const Navbar = () => {
           // Apply specific styles for screens <= 768px
           gsap.to(navbar, {
             width: "100%", // Keep it full width
-            opacity: 0.8, // Change opacity if desired
+            opacity: 1, // Change opacity if desired
             duration: 0.8,
             backgroundColor: "var(--color-dark-bg)",
             borderRadius: "50px",
-            // paddingLeft: 0,
-            // paddingRight: 0,
+            paddingLeft: "3vw",
+            paddingRight: "3vw",
           });
         } else {
           gsap.to(navbar, {
