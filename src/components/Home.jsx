@@ -599,7 +599,7 @@ const Home = () => {
         </div>
         <div className="foot-copyright">
           <p>
-            &copy; 2023 | Designed by{" "}
+            &copy; 2025 | Designed by{" "}
             <Link
               to="https://github.com/a833-us"
               target="_blank" 
