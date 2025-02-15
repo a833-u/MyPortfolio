@@ -541,9 +541,84 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
+.footer {
+  padding: 0 6vw;
+  height: 70vh;
+  width: 100%;
+}
+
+.foot-cont{
+  width: 100%;
+  height: 50vh;
+  border-radius: 50px;
+  background-color: #111115;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 5.5vh 1vw;
+}
+
+.foot-cont h1{
+  color: var(--text-secondary);
+  font-size: 3.5vw;
+  letter-spacing: 0.1vw;
+}
+
+.foot-copyright{
+  border-bottom: 1px solid var(--text-primary);
+}
+
+.foot-copyright{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw;
+}
+
+.foot-copyright p{
+  color: var(--text-secondary);
+  font-size: 1.2vw;
+  font-family: Clash-N;
+}
+
+.foot-copyright a{
+  color: var(--text-primary);
+  font-size: 1.2vw;
+  font-family: Clash-N;
+}
+
+.soc-items {
+  display: flex;
+  color: #fff;
+  list-style: none;
+  gap: 1vw;
+}
+
+.soc-items li a{
+  font-size: 1.5vw;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.soc-items li a:hover {
+  color: var(--text-primary);
+}
+
+.soc-items * {
+  transition: scale 300ms, filter 300ms;
+}
+
+.soc-items:has(:hover) :not(:hover) {
+  scale: 0.95;
+  filter: blur(0.7px);  
+}
+
+.mob-soc-items {
+  display: none;;
+}
 
 /* ......Accordian........ */
 
@@ -845,9 +920,85 @@ body {
   }
 
   .special-wall{
-    height: 35vh;
+    height: 15vh;
+  }
+
+  .footer{
+    margin-top: 7.5vh;
+  }
+
+  .foot-cont{
+    padding: 5vw;
+  }
+
+  .foot-cont h1{
+    text-align: center;
+    font-size: 10.5vw;
+  }
+
+  .foot-btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .foot-copyright{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 6.6vw;
+    border: none;
+  }
+
+  .foot-copyright p{
+    font-size: 4.5vw;
+  }
+
+  .foot-copyright p a{
+    font-size: 4.5vw;
+  }
+
+  .foot-social{
+    width: 100%;
+
+  }
+
+  .soc-items {
+    display: none;;
+  }
+
+  .mob-soc-items{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .mob-soc-items {
+    display: flex;
+    color: #fff;
+    list-style: none;
+    gap: 1vw;
+  }
+  
+  .mob-soc-items li a{
+    font-size: 6.5vw;
+    cursor: pointer;
+    color: var(--text-secondary);
+  }
+  
+  .mob-soc-items li a:hover {
+    color: var(--text-primary);
+  }
+  
+  .mob-soc-items * {
+    transition: scale 300ms, filter 300ms;
+  }
+  
+  .mob-soc-items:has(:hover) :not(:hover) {
+    scale: 0.95;
+    filter: blur(0.7px);  
   }
 }
+
 
 /* Scrollbar */
 

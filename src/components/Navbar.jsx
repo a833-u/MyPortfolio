@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import github from "../assets/github.svg";
 import "../CSS/index.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import home from "../assets/home.svg";
 import about from "../assets/about.svg";
@@ -12,6 +12,17 @@ import contact from "../assets/contact.svg";
 // import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState("");
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
+
+  const handleLinkClick = (path) => {
+    setActiveLink(path);
+  };
+
   const spanRef = useRef(null);
   const imgRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -24,7 +35,7 @@ const Navbar = () => {
       delay: 0.2,
       ease: "elastic.inOut(1,0.3)",
       stagger: 0.1,
-      padding: 0
+      padding: 0,
     });
   });
 
@@ -53,6 +64,8 @@ const Navbar = () => {
             backgroundColor: "#0b0b0da6",
             borderRadius: "50px",
             zIndex: 1000,
+            backdropFilter: "blur(10px)",
+            border: "0.7px solid #C0C0C033",
           });
         }
       } else {
@@ -62,7 +75,8 @@ const Navbar = () => {
           duration: 0.8,
           backgroundColor: "var(--color-dark-bg)",
           borderRadius: 0,
-          padding: 0
+          padding: 0,
+          border: "none",
         });
       }
     };
@@ -95,6 +109,7 @@ const Navbar = () => {
     };
   }, []);
 
+
   return (
     <header className="nav-header">
       <nav ref={spanRef} className="nav-nav" id="navbar">
@@ -117,18 +132,40 @@ const Navbar = () => {
         </div>
         <ul className="nav-items">
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              className={activeLink === "/" ? "active" : ""}
+              onClick={() => handleLinkClick("/")}
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about" color="white">
+            <Link
+              to="/about"
+              className={activeLink === "/about" ? "active" : ""}
+              onClick={() => handleLinkClick("/about")}
+            >
               About
             </Link>
           </li>
           <li>
-            <Link to="/project">Project</Link>
+            <Link
+              to="/project"
+              className={activeLink === "/project" ? "active" : ""}
+              onClick={() => handleLinkClick("/project")}
+            >
+              Project
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link
+              to="/contact"
+              className={activeLink === "/contact" ? "active" : ""}
+              onClick={() => handleLinkClick("/contact")}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
         <div className="nav-mode">

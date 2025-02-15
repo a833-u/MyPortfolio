@@ -137,6 +137,15 @@ body > *:not(.nav-header) {
   outline: none;
 }
 
+.nav-items * {
+  transition: scale 300ms, filter 300ms;
+}
+
+.nav-items:has(:hover) :not(:hover) {
+  scale: 0.95;
+  filter: blur(0.7px);  
+}
+
 .nav-mode img {
   width: 1.7vw;
   height: 1.7vw;
@@ -162,6 +171,10 @@ body > *:not(.nav-header) {
 
 .mob-nav {
   display: none;
+}
+
+.nav-items li a.active {
+  color: #b5ff6d; 
 }
 
 /* Responsive design */

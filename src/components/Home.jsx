@@ -32,6 +32,9 @@ import mongo from "../assets/PNG/MongoDB.png";
 import node from "../assets/PNG/node.png";
 import reactLogo from "../assets/PNG/physics.png";
 import tailwind from "../assets/PNG/tailwind1.png";
+import bootstrap from "../assets/PNG/bootstrap.png";
+import CSS from "../assets/PNG/text.png";
+import { LuGithub, LuInstagram, LuLinkedin, LuMail } from "react-icons/lu";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -277,14 +280,16 @@ const Home = () => {
 
   const logoImgs = [
     { imgUrl: JS, altText: "JavaScript Logo" },
-    { imgUrl: express, altText: "React Bits Logo" },
-    { imgUrl: github, altText: "React Bits Logo" },
-    { imgUrl: gsapLogo, altText: "React Bits Logo" },
-    { imgUrl: reactLogo, altText: "React Bits Logo" },
-    { imgUrl: tailwind, altText: "React Bits Logo" },
-    { imgUrl: html, altText: "React Bits Logo" },
-    { imgUrl: mongo, altText: "React Bits Logo" },
-    { imgUrl: node, altText: "React Bits Logo" }
+    { imgUrl: express, altText: "Express Logo" },
+    { imgUrl: github, altText: "Github Logo" },
+    { imgUrl: gsapLogo, altText: "GSAP Logo" },
+    { imgUrl: reactLogo, altText: "React Logo" },
+    { imgUrl: tailwind, altText: "Tailwind Logo" },
+    { imgUrl: html, altText: "HTML Logo" },
+    { imgUrl: mongo, altText: "MongoDB Logo" },
+    { imgUrl: node, altText: "Node Logo" },
+    { imgUrl: bootstrap, altText: "bootstrap Logo" },
+    { imgUrl: CSS, altText: "CSS Logo" },
   ];
 
   return (
@@ -570,12 +575,48 @@ const Home = () => {
               size="clamp(8rem, 1rem + 20vmin, 25rem)"
               duration="60s"
               bgColor="#0b0b0d"
-              bgAccentColor="#222222"
+              bgAccentColor="#333333"
             />
           </div>
         </div>
       </div>
-      <div className="ex"></div>
+      <div className="footer">
+        <div className="foot-cont">
+          <h1>Let&apos;s connect with me</h1>
+          <div className="foot-btn">
+            <div className="btn-known">
+              <Link to="https://wa.me/+916356874321" target="_blank" rel="noopener noreferrer">
+                <button className="button">Whatsapp me</button>
+              </Link>
+            </div>
+          </div>
+          <ul className="mob-soc-items">
+              <li><Link to="https://www.linkedin.com/in/ansh-kansara-583643188/"><LuLinkedin /></Link></li>
+              <li><Link to="https://github.com/a833-u"><LuGithub /></Link></li>
+              <li><Link to="https://www.instagram.com/anshkansara.8/"><LuInstagram /></Link></li>
+              <li><Link to="mailto:akansara833@gmail.com"><LuMail /></Link></li>
+            </ul>
+        </div>
+        <div className="foot-copyright">
+          <p>
+            &copy; 2023 | Designed by{" "}
+            <Link
+              to="https://github.com/a833-us"
+              target="_blank" 
+            >
+              Ansh Kansara
+            </Link>
+          </p>
+          <div className="foot-social">
+            <ul className="soc-items">
+              <li><Link to="https://www.linkedin.com/in/ansh-kansara-583643188/"><LuLinkedin /></Link></li>
+              <li><Link to="https://github.com/a833-u"><LuGithub /></Link></li>
+              <li><Link to="https://www.instagram.com/anshkansara.8/"><LuInstagram /></Link></li>
+              <li><Link to="mailto:akansara833@gmail.com"><LuMail /></Link></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
