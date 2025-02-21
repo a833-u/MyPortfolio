@@ -6,11 +6,12 @@ import Contact from "./components/Contact";
 import Project from "./components/Project";
 import "../src/CSS/index.css";
 import Lenis from "lenis";
+import Footer from "./components/Footer";
 
 const App = () => {
   const lenis = new Lenis({
     autoRaf: true,
-  })
+  });
   return (
     <BrowserRouter>
       <Navbar />
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/project" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
