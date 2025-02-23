@@ -158,8 +158,8 @@ body {
 }
 
 .btns-social a {
-  color: #dbdbdba4;
-  font-size: 1.1vw;
+  color: var(--text-secondary);;
+  font-size: 1.;
   font-family: var(--font-clash-n);
   text-transform: uppercase;
   display: flex;
@@ -331,9 +331,9 @@ body {
   color: var(--text-secondary) !important;
 }
 
-.head-cont span {
+/* .head-cont span {
   margin-left: 1vw;
-}
+} */
 
 .head-cont p {
   font-size: 1.3vw;
@@ -457,9 +457,9 @@ body {
   color: var(--text-secondary) !important;
 }
 
-.special-cont span {
+/* .special-cont span {
   margin-left: 1vw;
-}
+} */
 
 .special-main {
   display: flex;

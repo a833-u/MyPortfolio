@@ -1,66 +1,192 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-dark-bg);
+}
+
+@font-face {
+  font-family: Alpino-N;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../Fonts/Alpino/Alpino-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Alpino-L;
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../Fonts/Alpino/Alpino-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Alpino-B;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../Fonts/Alpino/Alpino-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: Clash-N;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../Fonts/Clash/ClashDisplay-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Clash-L;
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../Fonts/Clash/ClashDisplay-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Clash-B;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../Fonts/Clash/ClashDisplay-Bold.woff2") format("woff2");
+}
+
+.about-hero{
+  height: 92vh;
+  width: 100%;
+  margin-top: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6vw;
+  gap: 3vw;
+}
+
+.hero-img{
+  position: relative;
+  width: 35%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25vw 25vw 9999px 9999px;
+  aspect-ratio: 3 / 4;
+}
+
+.circularFont{
+  position: absolute;
+  top: 55vh;
+  left: 18vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  border-radius: 50%;
+  padding: 2vh;
+}
+
+.custom-class {
+  font-family: var(--font-clash-l);
+}
+
+.circularFont .circularArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: transparent;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 1px solid #898888b4;
+}
+
+.hero-desc{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+  gap: 4vh;
+}
+
+.hero-desc h1{
+  font-family: Clash-N;
+  font-size: 4vw;
+  line-height: 1.2;
+  color: var(--text-secondary);
+}
+
+.hero-desc h1 span{
+  color: var(--text-primary);
+}
+
+.desc-para{
+  width: 70%;
+}
+
+.desc-para p{
+  font-size: 1.1rem;
+  /* line-height: 1.5; */
+  font-family: var(--font-alpino-l);
+    color: #f6f7ffbd;
+}
+
+/* -----Responsive----- */
+
+@media (max-width: 767px) {
+  .about-hero{
+    flex-direction: column;
+    gap: 3vh;
+    height: auto;
+    justify-content: space-between;
   }
-  html,
-  body {
-    height: 100%;
+
+  .hero-img{
     width: 100%;
-    background-color: var(--color-dark-bg);
+    margin-top: 3vh;
   }
   
-  @font-face {
-    font-family: Alpino-N;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("../Fonts/Alpino/Alpino-Medium.woff2") format("woff2");
+  .hero-img img{
+    border-radius: 1vh 1vh 20vh 20vh;
   }
-  
-  @font-face {
-    font-family: Alpino-L;
-    font-style: normal;
-    font-weight: 200;
-    font-display: swap;
-    src: url("../Fonts/Alpino/Alpino-Light.woff2") format("woff2");
+
+  .circularFont{
+    top: 40vh;
+    left: 50vw;
   }
-  
-  @font-face {
-    font-family: Alpino-B;
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url("../Fonts/Alpino/Alpino-Bold.woff2") format("woff2");
+
+  .hero-desc{
+    width: 100%;
+    text-align: left;
   }
-  @font-face {
-    font-family: Clash-N;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("../Fonts/Clash/ClashDisplay-Regular.woff2") format("woff2");
+
+  .hero-desc h1{
+    font-size: 5vh;
   }
-  
-  @font-face {
-    font-family: Clash-L;
-    font-style: normal;
-    font-weight: 200;
-    font-display: swap;
-    src: url("../Fonts/Clash/ClashDisplay-Light.woff2") format("woff2");
+
+  .desc-para{
+    width: 100%;
+    text-align: left;
   }
-  
-  @font-face {
-    font-family: Clash-B;
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url("../Fonts/Clash/ClashDisplay-Bold.woff2") format("woff2");
+
+  .circularFont{
+    display: none;
   }
-  
-  
-  
-  h1{
-      font-family: var(--font-clash-l);
-      color: var(--text-primary);
-  }
+}
+
+/* -----Responsive----- */

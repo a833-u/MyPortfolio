@@ -3,9 +3,12 @@ import "../CSS/contact.css";
 const Contact = () => {
   return (
     <div>
-      <h1>Contact</h1>
+      Contact
     </div>
+
   );
 };
 
 export default Contact;
+
+

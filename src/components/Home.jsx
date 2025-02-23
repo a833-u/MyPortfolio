@@ -35,6 +35,8 @@ import tailwind from "../assets/PNG/tailwind1.png";
 import bootstrap from "../assets/PNG/bootstrap.png";
 import CSS from "../assets/PNG/text.png";
 import ScrollTop from "./ScrollTop";
+import ScrollFloat from "../ScrollFloat/ScrollFloat"
+import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -160,18 +162,18 @@ const Home = () => {
       },
     });
 
-    tl.fromTo(
-      ".pro-head .head1",
-      { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
-    );
+    // tl.fromTo(
+    //   ".pro-head .head1",
+    //   { opacity: 0, x: -100 },
+    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
+    // );
 
-    tl.fromTo(
-      ".pro-head .head-cont",
-      { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
-      "-=0.5" // Starts slightly earlier
-    );
+    // tl.fromTo(
+    //   ".pro-head .head-cont",
+    //   { opacity: 0, x: -100 },
+    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+    //   "-=0.5" // Starts slightly earlier
+    // );
 
     return () => {
       tl.kill();
@@ -191,18 +193,18 @@ const Home = () => {
       },
     });
 
-    specialTl.fromTo(
-      ".special-head .head1",
-      { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
-    );
+    // specialTl.fromTo(
+    //   ".special-head .head1",
+    //   { opacity: 0, x: -100 },
+    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
+    // );
 
-    specialTl.fromTo(
-      ".special-head .special-cont",
-      { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
-      "-=0.5"
-    );
+    // specialTl.fromTo(
+    //   ".special-head .special-cont",
+    //   { opacity: 0, x: -100 },
+    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+    //   "-=0.5"
+    // );
 
     return () => {
       specialTl.kill();
@@ -393,7 +395,12 @@ const Home = () => {
           </h1>
         </div>
         <div className="about-cont">
-          <p id="about-para">
+          <ScrollReveal
+            baseOpacity={0.1}
+            enableBlur={true}
+            baseRotation={3}
+            blurStrength={4}
+          >
             I&apos;m Ansh Kansara, a passionate Front-end developer with
             exceptional problem-solving abilities, dedicated to crafting
             impactful and innovative solutions. Proficient in designing
@@ -402,7 +409,7 @@ const Home = () => {
             technology stacks, ensuring efficient and scalable product
             development. Ready to relocate with no objections to further career
             growth and opportunities.
-          </p>
+          </ScrollReveal>
         </div>
       </div>
       <div className="main-projects">
@@ -417,12 +424,21 @@ const Home = () => {
             />
           </h1>
           <div className="head-cont">
-            <h1>
+            {/* <h1>
               Representative <span> Projects</span>
-            </h1>
-            <p>
+            </h1> */}
+            <ScrollFloat
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+            >
+              Represantative Projects
+            </ScrollFloat>
+            {/* <p>
               A handpicked showcase of my skills and the outcomes accomplished.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="pro-main">
@@ -515,9 +531,18 @@ const Home = () => {
             />
           </h1>
           <div className="special-cont">
-            <h1>
+          <ScrollFloat
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+            >
+              Technical Proficiencies
+            </ScrollFloat>
+            {/* <h1>
               Technical <span> Proficiencies</span>
-            </h1>
+            </h1> */}
           </div>
         </div>
         <div className="special-main">
