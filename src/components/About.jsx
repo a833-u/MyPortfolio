@@ -78,7 +78,7 @@ const About = () => {
             </p>
           </div>
           <div className="btn-known">
-            <Link to="/public/PDF/My-CV.pdf"  target="_blank" rel="noopener noreferrer">
+            <Link to="https://drive.google.com/file/d/13rhllYb3voGTYmvxZEnsWQz8pHAy3lsr/view?usp=drive_link"  target="_blank" rel="noopener noreferrer">
               <button className="button">Resume</button>
             </Link>
           </div>
