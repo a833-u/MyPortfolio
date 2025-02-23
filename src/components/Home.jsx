@@ -162,19 +162,6 @@ const Home = () => {
       },
     });
 
-    // tl.fromTo(
-    //   ".pro-head .head1",
-    //   { opacity: 0, x: -100 },
-    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
-    // );
-
-    // tl.fromTo(
-    //   ".pro-head .head-cont",
-    //   { opacity: 0, x: -100 },
-    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
-    //   "-=0.5" // Starts slightly earlier
-    // );
-
     return () => {
       tl.kill();
       ScrollTrigger.getAll().forEach((st) => st.kill());
@@ -192,19 +179,6 @@ const Home = () => {
         toggleActions: "play none none reverse",
       },
     });
-
-    // specialTl.fromTo(
-    //   ".special-head .head1",
-    //   { opacity: 0, x: -100 },
-    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
-    // );
-
-    // specialTl.fromTo(
-    //   ".special-head .special-cont",
-    //   { opacity: 0, x: -100 },
-    //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
-    //   "-=0.5"
-    // );
 
     return () => {
       specialTl.kill();
