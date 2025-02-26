@@ -35,7 +35,7 @@ import tailwind from "../assets/PNG/tailwind1.png";
 import bootstrap from "../assets/PNG/bootstrap.png";
 import CSS from "../assets/PNG/text.png";
 import ScrollTop from "./ScrollTop";
-import ScrollFloat from "../ScrollFloat/ScrollFloat"
+import ScrollFloat from "../ScrollFloat/ScrollFloat";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -354,6 +354,26 @@ const Home = () => {
             <h1>Development</h1>
             <img src={marqueeArrow} alt="" />
           </div>
+          <div className="marque">
+            <h1>Development</h1>
+            <img src={marqueeArrow} alt="" />
+          </div>
+          <div className="marque">
+            <h1>Website</h1>
+            <img src={marqueeArrow} alt="" />
+          </div>
+          <div className="marque">
+            <h1>Communication</h1>
+            <img src={marqueeArrow} alt="" />
+          </div>
+          <div className="marque">
+            <h1>Designing</h1>
+            <img src={marqueeArrow} alt="" />
+          </div>
+          <div className="marque">
+            <h1>Development</h1>
+            <img src={marqueeArrow} alt="" />
+          </div>
         </div>
       </div>
       <div className="main-about">
@@ -505,7 +525,7 @@ const Home = () => {
             />
           </h1>
           <div className="special-cont">
-          <ScrollFloat
+            <ScrollFloat
               animationDuration={1}
               ease="back.inOut(2)"
               scrollStart="center bottom+=50%"

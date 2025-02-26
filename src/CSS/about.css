@@ -187,6 +187,11 @@ body {
   .circularFont{
     display: none;
   }
+
+  .mainMarq {
+    padding: 0 6vw;
+    margin: 6vh 0;
+  }
 }
 
 /* -----Responsive----- */

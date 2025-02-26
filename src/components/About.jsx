@@ -7,6 +7,7 @@ import CircularText from "../CircularText/CircularText";
 import { GoArrowUpRight } from "react-icons/go";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import ScrollVelocity from '../ScrollVelocity/ScrollVelocity';
 
 const About = () => {
   const arrowContainerRef = useRef(null);
@@ -78,12 +79,21 @@ const About = () => {
             </p>
           </div>
           <div className="btn-known">
-            <Link to="https://drive.google.com/file/d/13rhllYb3voGTYmvxZEnsWQz8pHAy3lsr/view?usp=drive_link"  target="_blank" rel="noopener noreferrer">
+            <Link
+              to="https://drive.google.com/file/d/13rhllYb3voGTYmvxZEnsWQz8pHAy3lsr/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="button">Resume</button>
             </Link>
           </div>
         </div>
       </div>
+      <ScrollVelocity
+        texts={["Front - end Developer ", "Web Designer "]}
+        velocity={40}
+        className="custom-scroll-text"
+      />
       <ScrollTop />
     </div>
   );
