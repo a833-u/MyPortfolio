@@ -10,6 +10,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../src/CSS/index.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +36,14 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    window.history.scrollRestoration = "manual"; 
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
