@@ -62,12 +62,3 @@ h1 {
   font-family: var(--font-clash-l);
   color: var(--text-primary);
 }
-
-.main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-color: lightskyblue;
-}

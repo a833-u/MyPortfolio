@@ -4,11 +4,20 @@ import aboutImg from "../assets/aboutMyImage.jpg";
 import BlurText from "../BlurText/BlurText";
 import { Link } from "react-router-dom";
 import CircularText from "../CircularText/CircularText";
-import { GoArrowUpRight } from "react-icons/go";
-import { useEffect, useRef } from "react";
+import { GoArrowUpRight, GoTools } from "react-icons/go";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import ScrollVelocity from '../ScrollVelocity/ScrollVelocity';
+import ScrollVelocity from "../ScrollVelocity/ScrollVelocity";
+import { BsFillGearFill, BsStars } from "react-icons/bs";
+import ShinyText from "../ShinyText/ShinyText";
+import ScrollFloat from "../ScrollFloat/ScrollFloat";
+import SpotlightCard from "../SpotlightCard/SpotlightCard";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import { CiAlignLeft, CiBezier, CiEdit } from "react-icons/ci";
+import { PiRocketThin, PiTestTubeThin } from "react-icons/pi";
 
+gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const arrowContainerRef = useRef(null);
 
@@ -34,6 +43,74 @@ const About = () => {
       element.removeEventListener("mouseleave", onMouseLeave);
     };
   }, []);
+
+  const cards = useRef();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useGSAP(() => {
+    if (!isMobile) {
+      gsap.to(cards.current, {
+        x: "-100%",
+        scrollTrigger: {
+          trigger: ".workProcess",
+          scroller: "body",
+          start: "top 0%",
+          end: "top -300%",
+          scrub: 2,
+          pin: true,
+        },
+      });
+    }
+  }, [isMobile]);
+
+  const cardData = [
+    {
+      title: "Learn & Plan",
+      description:
+        "Understand project requirements and sketch a rough layout. Use Figma or pen & paper to create simple wireframes.",
+      icon: <CiBezier color="var(--text-secondary)" size={25} />
+    },
+    {
+      title: "Design",
+      description:
+        "Create high-fidelity designs using Figma or Sketch, ensuring a visually appealing UI/UX.",
+      icon: <CiEdit color="var(--text-secondary)" size={25} />
+    },
+    {
+      title: "Development",
+      description:
+        "Convert the designs into responsive web pages using React, Tailwind, and GSAP animations.",
+      icon: <CiAlignLeft color="var(--text-secondary)" size={25} />
+
+    },
+    {
+      title: "Testing",
+      description:
+        "Perform unit testing, integration testing, and responsive testing to ensure the app works perfectly.",
+      icon: <PiTestTubeThin color="var(--text-secondary)" size={25} />
+    },
+    {
+      title: "Deployment",
+      description:
+        "Deploy the project using Vercel, Netlify, or a dedicated server and monitor performance.",
+      icon: <PiRocketThin color="var(--text-secondary)" size={25} />
+    },
+    {
+      title: "Maintenance",
+      description:
+        "Continuously update and maintain the app to fix bugs and enhance performance.",
+      icon: <GoTools color="var(--text-secondary)" size={25} />
+    },
+  ];
 
   return (
     <div>
@@ -69,7 +146,10 @@ const About = () => {
                 className=""
               />
             </span>{" "}
-            & Design Specialist
+            & Design Specialist{" "}
+            <div className="glowing-star">
+              <BsStars color="gold" size={35} />
+            </div>
           </h1>
           <div className="desc-para">
             <p>
@@ -94,6 +174,47 @@ const About = () => {
         velocity={40}
         className="custom-scroll-text"
       />
+      <div className="workProcess">
+        <div className="process-head">
+          <h1 className="head1">
+            <BsFillGearFill color="var(--text-primary)" />
+            <ShinyText
+              text="STEPS I FOLLOW"
+              disabled={false}
+              speed={2}
+              className="custom-class"
+            />
+          </h1>
+          <div className="head-cont">
+            <ScrollFloat
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+            >
+              My Methodology
+            </ScrollFloat>
+          </div>
+        </div>
+        <div className="process-cards">
+          <div ref={cards} className={`main-cards ${isMobile ? "grid-layout" : ""}`}>
+            {cardData.map((card, index) => (
+              <SpotlightCard key={index} className="custom-spotlight-card" spotlightColor="var(--text-primary)">
+                <div className="card-logo">
+                  {card.icon}
+                </div>
+                <div className="card-heading">
+                  <h1>{card.title}</h1>
+                </div>
+                <div className="card-detail">
+                  <p>{card.description}</p>
+                </div>
+              </SpotlightCard>
+            ))}
+          </div>
+        </div>
+      </div>
       <ScrollTop />
     </div>
   );

@@ -58,7 +58,7 @@ body {
   src: url("../Fonts/Clash/ClashDisplay-Bold.woff2") format("woff2");
 }
 
-.about-hero{
+.about-hero {
   height: 92vh;
   width: 100%;
   margin-top: 8vh;
@@ -69,7 +69,7 @@ body {
   gap: 3vw;
 }
 
-.hero-img{
+.hero-img {
   position: relative;
   width: 35%;
   height: 85%;
@@ -78,7 +78,7 @@ body {
   align-items: center;
 }
 
-.hero-img img{
+.hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -86,7 +86,7 @@ body {
   aspect-ratio: 3 / 4;
 }
 
-.circularFont{
+.circularFont {
   position: absolute;
   top: 55vh;
   left: 18vw;
@@ -114,7 +114,7 @@ body {
   border: 1px solid #898888b4;
 }
 
-.hero-desc{
+.hero-desc {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -122,75 +122,220 @@ body {
   width: 65%;
   height: 100%;
   gap: 4vh;
+  position: relative;
 }
 
-.hero-desc h1{
+.glowing-star {
+  position: absolute;
+  bottom: 0vh;
+  right: 16vw;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px gold);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px gold) drop-shadow(0 0 35px gold);
+  }
+  100% {
+    filter: drop-shadow(0 0 30px gold) drop-shadow(0 0 50px gold);
+  }
+}
+
+.hero-desc h1 {
+  position: relative;
   font-family: Clash-N;
   font-size: 4vw;
   line-height: 1.2;
   color: var(--text-secondary);
 }
 
-.hero-desc h1 span{
+.hero-desc h1 span {
   color: var(--text-primary);
 }
 
-.desc-para{
+.desc-para {
   width: 70%;
 }
 
-.desc-para p{
+.desc-para p {
   font-size: 1.1rem;
   /* line-height: 1.5; */
   font-family: var(--font-alpino-l);
-    color: #f6f7ffbd;
+  color: #f6f7ffbd;
+}
+
+.workProcess {
+  padding: 6vw;
+  height: auto;
+  width: 100%;
+}
+
+.process-head {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.process-head h1 {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+  color: var(--text-primary) !important;
+  word-spacing: 0.5vw;
+}
+
+.process-cards {
+  margin-top: 4vh;
+  width: 100%;
+}
+
+.main-cards {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1vw;
+  flex-wrap: nowrap;
+  width: fit-content;
+  height: 35vh;
+}
+
+.card-logo {
+  height: 3.5vw;
+  width: 3.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-primary);
+}
+
+.card-heading {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.card-heading h1 {
+  font-size: 1.8vw;
+  color: var(--text-secondary);
+  font-family: var(--font-clash-l);
+  word-spacing: 0.5vw;
+}
+
+.card-detail {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.card-detail p {
+  font-family: Satoshi-L;
+  color: var(--text-secondary);
 }
 
 /* -----Responsive----- */
 
-@media (max-width: 767px) {
-  .about-hero{
+@media (max-width: 768px) {
+  .about-hero {
     flex-direction: column;
     gap: 3vh;
     height: auto;
     justify-content: space-between;
   }
 
-  .hero-img{
+  .hero-img {
     width: 100%;
     margin-top: 3vh;
   }
-  
-  .hero-img img{
+
+  .hero-img img {
     border-radius: 1vh 1vh 20vh 20vh;
   }
 
-  .circularFont{
-    top: 40vh;
-    left: 50vw;
+  .circularFont {
+    top: 36vh;
+    left: 22vw;
   }
 
-  .hero-desc{
+  .hero-desc {
     width: 100%;
     text-align: left;
   }
 
-  .hero-desc h1{
+  .hero-desc h1 {
     font-size: 5vh;
   }
 
-  .desc-para{
+  .desc-para {
     width: 100%;
     text-align: left;
   }
 
-  .circularFont{
-    display: none;
+  .circularFont {
+    display: block;
+  }
+
+  .circularFont .circularArrow {
+    top: 5.4vh;
+    right: 12vw;
   }
 
   .mainMarq {
     padding: 0 6vw;
     margin: 6vh 0;
+  }
+
+  .main-cards {
+    gap: 3vh;
+  }
+
+  .card-logo {
+    height: 10.5vw;
+    width: 10.5vw;
+    padding: 1vh;
+  }
+
+  .card-heading h1 {
+    font-size: 4.8vw;
+  }
+
+  .grid-layout {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .glowing-star {
+    display: none;
+  }
+
+  .process-head {
+    align-items: center;
+  }
+
+  .process-head h1 {
+    font-size: 5.5vw;
+  }
+
+  .process-head .head-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 2vh;
+    font-family: var(--font-clash-n);
   }
 }
 

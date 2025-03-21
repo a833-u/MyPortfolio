@@ -49,10 +49,8 @@ const Navbar = () => {
             width: "100%", // Keep it full width
             opacity: 1, // Change opacity if desired
             duration: 0.8,
-            backgroundColor: "var(--color-dark-bg)",
-            borderRadius: "50px",
-            paddingLeft: "3vw",
-            paddingRight: "3vw",
+            backgroundColor: "transparent",
+            // borderRadius: "50px",
           });
         } else {
           gsap.to(navbar, {
@@ -73,7 +71,7 @@ const Navbar = () => {
           width: window.innerWidth <= 768 ? "100%" : "100%",
           opacity: 1,
           duration: 0.8,
-          backgroundColor: "var(--color-dark-bg)",
+          backgroundColor: "transparent",
           borderRadius: 0,
           padding: 0,
           border: "none",

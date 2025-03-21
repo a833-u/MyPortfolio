@@ -350,30 +350,6 @@ const Home = () => {
             <h1>Designing</h1>
             <img src={marqueeArrow} alt="" />
           </div>
-          <div className="marque">
-            <h1>Development</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Development</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Website</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Communication</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Designing</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Development</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
         </div>
       </div>
       <div className="main-about">

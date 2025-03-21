@@ -36,6 +36,7 @@ body {
   font-display: swap;
   src: url("../Fonts/Alpino/Alpino-Bold.woff2") format("woff2");
 }
+
 @font-face {
   font-family: Clash-N;
   font-style: normal;
@@ -60,11 +61,36 @@ body {
   src: url("../Fonts/Clash/ClashDisplay-Bold.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: Satoshi-N;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/public/Fonts/Satoshi/Satoshi-Regular.woff") format("woff2");
+}
+
+@font-face {
+  font-family: Satoshi-L;
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/public/Fonts/Satoshi/Satoshi-Light.woff") format("woff2");
+}
+
+@font-face {
+  font-family: Satoshi-B;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/public/Fonts/Satoshi/Satoshi-Bold.woff") format("woff2");
+}
+
 /* Colors */
 :root {
   --text-primary: #b5ff6d;
   --text-secondary: #f6f7ff;
   --color-dark-bg: #0b0b0d;
+  --border-primary: #898888b4;
   --font-alpino-n: "Alpino-N", sans-serif;
   --font-alpino-l: "Alpino-L", sans-serif;
   --font-alpino-b: "Alpino-B", sans-serif;
