@@ -98,8 +98,8 @@ body {
   background-color: #000;
   border-radius: 50%;
   padding: 2vh;
-  width: 170px; /* Fixed width */
-  height: 170px; /* Fixed height */
+  width: auto; /* Fixed width */
+  height: auto; /* Fixed height */
 }
 
 .custom-class {
@@ -269,8 +269,8 @@ body {
   .circularFont {
     bottom: calc(30% - 250px);
     right: calc(20% - 84px);
-    height: 180px;
-    width: 180px;
+    height: auto;
+    width: auto;
   }
 
   .hero-desc {
