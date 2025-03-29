@@ -12,7 +12,7 @@ import { BsFillGearFill, BsStars } from "react-icons/bs";
 import ShinyText from "../ShinyText/ShinyText";
 import ScrollFloat from "../ScrollFloat/ScrollFloat";
 import SpotlightCard from "../SpotlightCard/SpotlightCard";
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { CiAlignLeft, CiBezier, CiEdit } from "react-icons/ci";
 import { PiRocketThin, PiTestTubeThin } from "react-icons/pi";
@@ -44,33 +44,101 @@ const About = () => {
     };
   }, []);
 
-  const cards = useRef();
+  // const cards = useRef();
+  // const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth <= 768);
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
+  // useGSAP(() => {
+  //   if (!isMobile) {
+  //     gsap.to(cards.current, {
+  //       x: "-100%",
+  //       scrollTrigger: {
+  //         trigger: ".workProcess",
+  //         scroller: "body",
+  //         start: "top 0%",
+  //         end: "top -300%",
+  //         scrub: 2,
+  //         pin: true,
+  //       },
+  //     });
+  //   }
+  // }, [isMobile]);
+
+  const cards = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+        setIsMobile(window.innerWidth <= 768);
     };
 
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);  // Use matchMedia on initial load
+
+    const handleMediaChange = (event) => {
+        setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+        window.removeEventListener("resize", handleResize);
+        mediaQuery.removeEventListener("change", handleMediaChange);
+    };
   }, []);
 
-  useGSAP(() => {
-    if (!isMobile) {
-      gsap.to(cards.current, {
-        x: "-100%",
-        scrollTrigger: {
-          trigger: ".workProcess",
-          scroller: "body",
-          start: "top 0%",
-          end: "top -300%",
-          scrub: 2,
-          pin: true,
-        },
-      });
+
+  useEffect(() => {
+    // Clear existing ScrollTriggers
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    if (cards.current && !isMobile) {
+      try {
+        gsap.to(cards.current, {
+          x: "-100%",
+          scrollTrigger: {
+            trigger: ".workProcess", // Ensure this element exists
+            scroller: "body",
+            start: "top 0%",
+            end: "top -300%",
+            scrub: 2,
+            pin: true,
+            invalidateOnRefresh: true,
+            onEnter: () => console.log("ScrollTrigger entered"), // Debugging
+            onLeave: () => console.log("ScrollTrigger left"),   // Debugging
+            onEnterBack: () => console.log("ScrollTrigger entered back"),
+            onLeaveBack: () => console.log("ScrollTrigger left back")
+          },
+          onComplete: () => console.log("GSAP animation complete"), //Debugging
+          onError: (error) => console.error("GSAP animation error:", error)  // Error logging
+        });
+      } catch (error) {
+        console.error("ScrollTrigger initialization error:", error);
+        // Fallback behavior:  Maybe show a message or use a different animation
+        // You could also set a state variable to disable the animation altogether.
+        alert("Error initializing animation. Please reload the page."); //Notify user
+      }
+    } else {
+      // If it's mobile or cards.current is null, revert to default state
+      if (cards.current) {
+        gsap.set(cards.current, { clearProps: "x" });
+      }
     }
+
+    //Important:  Refresh ScrollTrigger after content loads.  This is the most common cause of issues.
+    ScrollTrigger.refresh();
+
   }, [isMobile]);
+
 
   const cardData = [
     {
