@@ -44,7 +44,7 @@ const About = () => {
     };
   }, []);
 
-  const cards = useRef();
+  const cards = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -56,8 +56,27 @@ const About = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Flag to indicate if ScrollTrigger should be enabled
+  const [scrollTriggerEnabled, setScrollTriggerEnabled] = useState(false);
+
+  useEffect(() => {
+      // Delay ScrollTrigger initialization until the DOM is likely ready *and* `isMobile` is known
+      const timeoutId = setTimeout(() => {
+          setScrollTriggerEnabled(true);
+      }, 100); // Adjust the delay (in milliseconds) as needed.  A small delay is usually sufficient.
+
+      return () => clearTimeout(timeoutId); // Clear timeout on unmount
+  }, []);
+
   useGSAP(() => {
-    if (!isMobile) {
+    if (!isMobile && scrollTriggerEnabled) {
+      // Kill any existing ScrollTriggers on this element to prevent conflicts
+      ScrollTrigger.getAll().forEach(trigger => {
+          if (trigger.trigger === cards.current) {
+              trigger.kill();
+          }
+      });
+
       gsap.to(cards.current, {
         x: "-100%",
         scrollTrigger: {
@@ -67,10 +86,19 @@ const About = () => {
           end: "top -300%",
           scrub: 2,
           pin: true,
+          invalidateOnRefresh: true, 
         },
       });
     }
-  }, [isMobile]);
+    else {
+      ScrollTrigger.getAll().forEach(trigger => {
+          if (trigger.trigger === cards.current) {
+              trigger.kill();
+          }
+      });
+      gsap.set(cards.current, { clearProps: "x" }); x
+    }
+  }, [isMobile, scrollTriggerEnabled]);
 
   const cardData = [
     {
