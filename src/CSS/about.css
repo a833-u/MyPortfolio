@@ -88,14 +88,18 @@ body {
 
 .circularFont {
   position: absolute;
-  top: 55vh;
-  left: 18vw;
+  /* Initial position - centered */
+  bottom: calc(50% - 400px); /* Adjust the `50px` based on the visual position */
+  right: calc(50% - 300px); /* Adjust the `50px` based on the visual position */
+  transform: translate(-50%, -50%); /* Perfectly center the element */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #000;
   border-radius: 50%;
   padding: 2vh;
+  width: 170px; /* Fixed width */
+  height: 170px; /* Fixed height */
 }
 
 .custom-class {
@@ -263,8 +267,10 @@ body {
   }
 
   .circularFont {
-    top: 36vh;
-    left: 22vw;
+    bottom: calc(30% - 250px);
+    right: calc(20% - 84px);
+    height: 180px;
+    width: 180px;
   }
 
   .hero-desc {
