@@ -104,7 +104,7 @@ const About = () => {
     if (cards.current && !isMobile) {
       try {
         gsap.to(cards.current, {
-          x: "-100%",
+          x: "-110%",
           scrollTrigger: {
             trigger: ".workProcess", // Ensure this element exists
             scroller: "body",
@@ -142,15 +142,15 @@ const About = () => {
 
   const cardData = [
     {
-      title: "Learn & Plan",
+      title: "Requirement Analysis",
       description:
-        "Understand project requirements and sketch a rough layout. Use Figma or pen & paper to create simple wireframes.",
+        "Gather project details, understand client needs, and define the tech stack for the frontend.",
       icon: <CiBezier color="var(--text-secondary)" size={25} />
     },
     {
-      title: "Design",
+      title: "Wireframing & UI Design",
       description:
-        "Create high-fidelity designs using Figma or Sketch, ensuring a visually appealing UI/UX.",
+        "Create wireframes and design high-fidelity mockups using Figma or Sketch, ensuring a seamless UI/UX.",
       icon: <CiEdit color="var(--text-secondary)" size={25} />
     },
     {
@@ -161,21 +161,21 @@ const About = () => {
 
     },
     {
-      title: "Testing",
+      title: "API Integration",
       description:
-        "Perform unit testing, integration testing, and responsive testing to ensure the app works perfectly.",
+        "Implement state management using React Context, Redux, or Zustand, and integrate APIs for dynamic functionality.",
       icon: <PiTestTubeThin color="var(--text-secondary)" size={25} />
     },
     {
-      title: "Deployment",
+      title: "Testing & Debugging",
       description:
-        "Deploy the project using Vercel, Netlify, or a dedicated server and monitor performance.",
+        "Perform unit and integration testing using Jest and React Testing Library to ensure a bug-free experience.",
       icon: <PiRocketThin color="var(--text-secondary)" size={25} />
     },
     {
-      title: "Maintenance",
+      title: "Optimization",
       description:
-        "Continuously update and maintain the app to fix bugs and enhance performance.",
+        "Optimize performance using lazy loading, code splitting, and accessibility improvements.",
       icon: <GoTools color="var(--text-secondary)" size={25} />
     },
   ];
