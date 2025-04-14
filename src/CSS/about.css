@@ -84,7 +84,13 @@ body {
   object-fit: cover;
   border-radius: 25vw 25vw 9999px 9999px;
   aspect-ratio: 3 / 4;
+  /* filter: grayscale(9); */
 }
+
+/* .hero-img img:hover {
+  filter: grayscale(0);
+  transition: all 0.2s ease-in-out;
+} */
 
 .circularFont {
   position: absolute;

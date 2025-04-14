@@ -1,6 +1,7 @@
 import "../CSS/about.css";
 import ScrollTop from "./ScrollTop";
 import aboutImg from "../assets/aboutMyImage.jpg";
+// import aboutImg2 from "../assets/aboutImg2.png";
 import BlurText from "../BlurText/BlurText";
 import { Link } from "react-router-dom";
 import CircularText from "../CircularText/CircularText";
@@ -16,6 +17,7 @@ import SpotlightCard from "../SpotlightCard/SpotlightCard";
 import { ScrollTrigger } from "gsap/all";
 import { CiAlignLeft, CiBezier, CiEdit } from "react-icons/ci";
 import { PiRocketThin, PiTestTubeThin } from "react-icons/pi";
+import FlowingMenu from "../FlowingMenu/FlowingMenu";
 
 gsap.registerPlugin(ScrollTrigger);
 const About = () => {
@@ -77,22 +79,22 @@ const About = () => {
 
   useEffect(() => {
     const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobile(mediaQuery.matches);  // Use matchMedia on initial load
 
     const handleMediaChange = (event) => {
-        setIsMobile(event.matches);
+      setIsMobile(event.matches);
     };
 
     mediaQuery.addEventListener("change", handleMediaChange);
 
     window.addEventListener("resize", handleResize);
     return () => {
-        window.removeEventListener("resize", handleResize);
-        mediaQuery.removeEventListener("change", handleMediaChange);
+      window.removeEventListener("resize", handleResize);
+      mediaQuery.removeEventListener("change", handleMediaChange);
     };
   }, []);
 
@@ -180,6 +182,13 @@ const About = () => {
     },
   ];
 
+  const techStack = [
+    { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
+    { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
+    { link: '#', text: 'Monterey', image: 'https://picsum.photos/600/400?random=3' },
+    { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
+  ];
+
   return (
     <div>
       <div className="about-hero">
@@ -228,7 +237,7 @@ const About = () => {
           </div>
           <div className="btn-known">
             <Link
-              to="https://drive.google.com/file/d/13rhllYb3voGTYmvxZEnsWQz8pHAy3lsr/view?usp=drive_link"
+              to="https://drive.google.com/file/d/1nN7DiJuELmetLzirFg9C2keaXOQA4nww/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -281,6 +290,11 @@ const About = () => {
               </SpotlightCard>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="techStack">
+        <div style={{ height: '500px', position: 'relative' }}>
+          <FlowingMenu items={techStack} />
         </div>
       </div>
       <ScrollTop />
