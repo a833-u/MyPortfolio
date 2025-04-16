@@ -513,6 +513,11 @@ body {
 
   .techMain {
     grid-template-columns: repeat(1, 1fr);
+    gap: 4vw;
+  }
+
+  .textBox {
+    font-size: 6vw;
   }
 }
 
