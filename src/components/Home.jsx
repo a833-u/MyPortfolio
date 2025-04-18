@@ -4,7 +4,8 @@ import heart from "../assets/heart.svg";
 import { useGSAP } from "@gsap/react";
 import BlurText from "../BlurText/BlurText";
 import arrow from "../assets/arrow.svg";
-import marqueeArrow from "../assets/marqueeArrow.svg";
+import Marquee from "./Marquee";
+// import marqueeArrow from "../assets/marqueeArrow.svg";
 import laptop from "../assets/laptop.svg";
 import work from "../assets/work.svg";
 import kalakaar from "../assets/image.png";
@@ -78,56 +79,6 @@ const Home = () => {
     { name: "Instagram", url: "https://www.instagram.com/anshkansara.8/" },
     { name: "Gmail", url: "mailto:akansara833@gmail.com" },
   ];
-
-  // Marquee
-
-  useEffect(() => {
-    const handleScroll = (dets) => {
-      if (dets.deltaY > 0) {
-        gsap.to(".marque", {
-          transform: "translateX(-200%)",
-          duration: 2,
-          repeat: -1,
-          ease: "none",
-        });
-
-        gsap.to(".marque img", {
-          rotate: 180,
-        });
-      } else {
-        gsap.to(".marque", {
-          transform: "translateX(0%)",
-          duration: 2,
-          repeat: -1,
-          ease: "none",
-        });
-
-        gsap.to(".marque img", {
-          rotate: 0,
-        });
-      }
-    };
-
-    const handleTouchMove = (event) => {
-      const touch = event.touches[0];
-      if (touch) {
-        const deltaY = touch.clientY - window.innerHeight / 3; // Adjust this calculation as needed
-        if (deltaY > 0) {
-          handleScroll({ deltaY: 1 }); // Simulate scroll down
-        } else {
-          handleScroll({ deltaY: -1 }); // Simulate scroll up
-        }
-      }
-    };
-
-    window.addEventListener("wheel", handleScroll);
-    window.addEventListener("touchmove", handleTouchMove);
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-      window.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, []);
 
   useEffect(() => {
     const cards = document.querySelectorAll(".card");
@@ -333,24 +284,8 @@ const Home = () => {
         </div>
       </div>
       <div className="main-marque">
-        <div className="marque-move">
-          <div className="marque">
-            <h1>Development</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Website</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Communication</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-          <div className="marque">
-            <h1>Designing</h1>
-            <img src={marqueeArrow} alt="" />
-          </div>
-        </div>
+              <Marquee />
+
       </div>
       <div className="main-about">
         <div className="about-head">

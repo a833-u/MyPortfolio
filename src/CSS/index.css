@@ -129,6 +129,102 @@ body {
   z-index: 1000;
 }
 
+/* ==================== Marquee ==================== */
+
+.mainMarquee {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marquee-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-block: 1px solid #191920;
+  padding-top: 12px; 
+  padding-bottom: 12px; 
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee-inner {
+  display: flex;
+  overflow: hidden;
+  gap: var(--gap);
+  --gap: 2rem; 
+  height: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 100%;
+  flex-shrink: 0;
+  list-style: none;
+  animation: marqueeAnimation 30s linear infinite; 
+  gap: var(--gap);
+
+}
+
+.marquee-content li {
+  height: 100%;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+
+}
+
+.marquee-item-text {
+  color: var(--border-primary);
+  font-size: 4vw; 
+  font-family: var(--font-clash-n);
+}
+
+.marquee-item-icon {
+  color: #a0aec0;
+}
+
+.marquee-fade-left,
+.marquee-fade-right {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30%; /* Equivalent of w-1/4 */
+}
+
+
+
+.marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #000000, transparent); /* Equivalent of from-bg-900 */
+}
+
+.marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #000000, transparent); /* Equivalent of from-bg-900 */
+}
+
+/* Animation Keyframes (Add to your CSS) */
+@keyframes marqueeAnimation {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* ==================== Marquee ==================== */
+
 body > *:not(.nav-header) {
   position: relative;
   z-index: 1;
@@ -278,5 +374,13 @@ body > *:not(.nav-header) {
     color: var(--text-secondary);
   }
 
-  
+  .marquee-item-text {
+    font-size: 10vw; 
+  }
+
+  .marquee-fade-left,
+.marquee-fade-right {
+  width: 20%;
+}
+
 }
