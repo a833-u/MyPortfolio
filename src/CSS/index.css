@@ -156,8 +156,8 @@ body {
 .marquee-inner {
   display: flex;
   overflow: hidden;
-  gap: var(--gap);
   --gap: 2rem; 
+  gap: var(--gap);
   height: 100%;
 }
 
