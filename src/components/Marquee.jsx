@@ -8,31 +8,31 @@ const Marquee = () => {
       <div className="marquee-inner">
         <ul className="marquee-content">
           <li><MarqueeItem text="UI Design" /></li>
-          <FaRegStar size={50} color='#b5ff6d'/>
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar'/>
           <li><MarqueeItem text="Responsive" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Components" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Animations" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Performance" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Accessibility" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           </ul>
         <ul className="marquee-content" aria-hidden="true">
           <li><MarqueeItem text="UI Design" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Responsive" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Components" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Animations" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Performance" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           <li><MarqueeItem text="Accessibility" /></li>
-          <FaRegStar size={50} color='#b5ff6d' />
+          <FaRegStar size={50} color='#b5ff6d' className='marqueeStar' />
           </ul>
       </div>
       <div className="marquee-fade-left"></div>
