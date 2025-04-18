@@ -169,7 +169,7 @@ body {
   flex-shrink: 0;
   list-style: none;
   animation: marqueeAnimation 30s linear infinite; 
-  gap: var(--gap);
+  /* gap: var(--gap); */
 
 }
 
