@@ -44,13 +44,11 @@ const Navbar = () => {
       const navbar = document.getElementById("navbar");
       if (window.scrollY > 50) {
         if (window.innerWidth <= 768) {
-          // Apply specific styles for screens <= 768px
           gsap.to(navbar, {
-            width: "100%", // Keep it full width
-            opacity: 1, // Change opacity if desired
+            width: "100%",
+            opacity: 1, 
             duration: 0.8,
             backgroundColor: "transparent",
-            // borderRadius: "50px",
           });
         } else {
           gsap.to(navbar, {
@@ -147,7 +145,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               to="/project"
               className={activeLink === "/project" ? "active" : ""}
@@ -164,7 +162,7 @@ const Navbar = () => {
             >
               Contact
             </Link>
-          </li>
+          </li> */}
         </ul>
         <div className="nav-mode">
           <a href="https://github.com/a833-u" target="_blank">
