@@ -416,13 +416,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="pro-btn">
+        {/* <div className="pro-btn">
           <div className="btn-known">
             <Link to="/project">
               <button className="button">All Projects</button>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="speciality">
         <div className="special-head" ref={specialRef}>

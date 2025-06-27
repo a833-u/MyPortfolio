@@ -185,7 +185,7 @@ const About = () => {
             />
 
             <div className="circularArrow" ref={arrowContainerRef}>
-              <Link to="/contact">
+              <Link to="https://drive.google.com/file/d/1EwSkv_IxHk1FrWlgcYC6jtfH6sn1ExAl/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                 <div className="">
                   <GoArrowUpRight color="#b5ff6d" size={25} />
                 </div>
