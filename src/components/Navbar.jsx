@@ -6,8 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import home from "../assets/home.svg";
 import about from "../assets/about.svg";
-import project from "../assets/project.svg";
-import contact from "../assets/contact.svg";
+// import project from "../assets/project.svg";
+// import contact from "../assets/contact.svg";
 
 // import { useGSAP } from "@gsap/react";
 
@@ -185,7 +185,7 @@ const Navbar = () => {
                 About
               </li>
             </Link>
-            <Link to="/project">
+            {/* <Link to="/project">
               <li>
                 <img src={project} alt="" />
                 Project
@@ -196,7 +196,7 @@ const Navbar = () => {
                 <img src={contact} alt="" />
                 Contact
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </nav>
