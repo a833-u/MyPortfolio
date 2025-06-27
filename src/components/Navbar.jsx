@@ -145,7 +145,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          {/* <li>
+          <li>
             <Link
               to="/project"
               className={activeLink === "/project" ? "active" : ""}
@@ -162,7 +162,7 @@ const Navbar = () => {
             >
               Contact
             </Link>
-          </li> */}
+          </li>
         </ul>
         <div className="nav-mode">
           <a href="https://github.com/a833-u" target="_blank">
